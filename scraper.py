@@ -13,14 +13,15 @@ REVALIDATE_SECRET = os.getenv("REVALIDATE_SECRET")
 
 session = requests.Session()
 # session.headers.update({"User-Agent": "PostmanRuntime/7.36.0"})
-session.headers.update(
-    {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Referer": "https://www.google.com/",
-    }
-)
+# session.headers.update(
+#     {
+#         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+#         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+#         "Accept-Language": "en-US,en;q=0.9",
+#         "Referer": "https://www.google.com/",
+#     }
+# )
+session.proxies.update({"http": "http://145.220.226.144:8080"})
 session.timeout = 30  # default timeout
 
 connection = None
