@@ -21,7 +21,12 @@ session = requests.Session()
 #         "Referer": "https://www.google.com/",
 #     }
 # )
-session.proxies.update({"http": "http://145.220.226.144:8080"})
+session.proxies.update(
+    {
+        "http": "http://145.220.226.144:8080",
+        "https": "http://145.220.226.144:8080",
+    }
+)
 session.timeout = 30  # default timeout
 
 connection = None
