@@ -12,7 +12,7 @@ REVALIDATE_SECRET = os.getenv("REVALIDATE_SECRET")
 # ---------- GLOBAL REUSABLE OBJECTS (IMPORTANT FOR LAMBDA WARM START) ----------
 
 session = requests.Session()
-session.headers.update({"User-Agent": "PostmanRuntime/7.36.0"})
+# session.headers.update({"User-Agent": "PostmanRuntime/7.36.0"})
 session.timeout = 30  # default timeout
 
 connection = None
